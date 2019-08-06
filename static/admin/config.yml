@@ -29,6 +29,17 @@ collections:
         name: 'index'
         fields:
           - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'index-page' }
+          - { label: 'Navbar Brand', name: 'navbarTitle', widget: 'string' }
+          - {
+              label: Social Links,
+              name: socialLinks,
+              widget: list,
+              fields:
+                [
+                  { label: URL, name: url, widget: string },
+                  { label: Icon, name: icon, widget: image },
+                ],
+            }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
