@@ -1,15 +1,15 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import github from '../img/github-icon.svg';
+import logo from '../img/logo.svg';
 
-const Navbar = class extends React.Component {
+class Navbar extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       active: false,
       navBarActiveClass: '',
-    }
+    };
   }
 
   toggleHamburger = () => {
@@ -27,10 +27,10 @@ const Navbar = class extends React.Component {
             })
           : this.setState({
               navBarActiveClass: '',
-            })
+            });
       }
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -70,7 +70,7 @@ const Navbar = class extends React.Component {
                 Blog
               </Link>
               <Link className="navbar-item" to="/contact">
-                Contact
+                s Contact
               </Link>
               <Link className="navbar-item" to="/contact/examples">
                 Form Examples
@@ -91,8 +91,8 @@ const Navbar = class extends React.Component {
           </div>
         </div>
       </nav>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;
