@@ -182,8 +182,8 @@ export const pageQuery = graphql`
           url
           icon {
             childImageSharp {
-              fixed {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 264, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

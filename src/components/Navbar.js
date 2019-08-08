@@ -5,20 +5,34 @@ import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
 
 const createSocialLink = ({ url, icon }) => (
-  <a href={url}>
-    <Img
+  <a key={url} href={url}>
+    <img
       style={{ width: 13, height: 13 }}
-      fixed={icon.childImageSharp && icon.childImageSharp.fixed}
+      src={icon.childImageSharp ? icon.childImageSharp.fluid.src : icon}
       alt={url}
     />
   </a>
 );
-const Navbar = ({ socialLinks, brand }) => (
-  <div>
-    <h1>{brand}</h1>
-    {socialLinks.map(createSocialLink)}
-  </div>
-);
+
+class Navbar extends Component {
+  render() {
+    const { socialLinks, brand } = this.props;
+
+    return (
+      <div
+        style={{
+          backgroundColor: 'black',
+          color: '#fff',
+          display: 'flex',
+          justifyContent: 'space-around',
+        }}
+      >
+        <h1>{brand}</h1>
+        {socialLinks.map(createSocialLink)}
+      </div>
+    );
+  }
+}
 
 // class Navbar extends Component {
 //   state = {
