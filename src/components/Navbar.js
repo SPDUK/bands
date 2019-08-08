@@ -8,7 +8,7 @@ const createSocialLink = ({ url, icon }) => (
   <a key={url} href={url}>
     <img
       style={{ width: 13, height: 13 }}
-      src={icon.childImageSharp ? icon.childImageSharp.fluid.src : icon}
+      src={icon && icon.childImageSharp ? icon.childImageSharp.fluid.src : icon}
       alt={url}
     />
   </a>
