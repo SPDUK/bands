@@ -2,7 +2,7 @@
 templateKey: index-page
 brand: Polyphia
 socialLinks:
-  - icon: /img/iconfinder_06-facebook_104498.svg
+  - icon: /img/coffee-gear.png
     url: 'https://www.facebook.com'
   - icon: /img/twitter.png
     url: 'https://www.twitter.com'
