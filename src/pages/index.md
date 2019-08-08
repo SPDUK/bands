@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-navbarTitle: Polyphia
+brand: Polyphia
 socialLinks:
   - icon: /img/twitter.png
     url: 'https://www.twitter.com'
