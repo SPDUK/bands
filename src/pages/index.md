@@ -4,7 +4,7 @@ brand: Polyphia
 socialLinks:
   - icon: /img/twitter.png
     url: 'https://www.twitter.com'
-  - icon: /img/facebook-f-brands.svg
+  - icon: /img/facebook.png
     url: 'https://www.facebook.com'
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
