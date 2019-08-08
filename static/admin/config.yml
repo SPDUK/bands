@@ -29,7 +29,7 @@ collections:
         name: 'index'
         fields:
           - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'index-page' }
-          - { label: 'Navbar Brand', name: 'navbarTitle', widget: 'string' }
+          - { label: 'Navbar Brand', name: 'brand', widget: 'string' }
           - {
               label: Social Links,
               name: socialLinks,

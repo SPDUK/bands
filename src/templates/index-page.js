@@ -14,8 +14,12 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
+  socialLinks,
+  brand,
 }) => (
   <div>
+    <Navbar brand={brand} socialLinks={socialLinks} />
+
     <div
       className="full-width-image margin-top-0"
       style={{
@@ -137,12 +141,12 @@ const IndexPage = ({ data }) => {
       description,
       intro,
       socialLinks,
+      brand,
     },
   } = data.markdownRemark;
 
   return (
     <Layout>
-      <Navbar socialLinks={socialLinks} />
       <IndexPageTemplate
         image={image}
         title={title}
@@ -151,6 +155,8 @@ const IndexPage = ({ data }) => {
         mainpitch={mainpitch}
         description={description}
         intro={intro}
+        socialLinks={socialLinks}
+        brand={brand}
       />
     </Layout>
   );
@@ -171,12 +177,13 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        brand
         socialLinks {
           url
           icon {
             childImageSharp {
-              fluid(maxWidth: 256, quality: 100) {
-                ...GatsbyImageSharpFluid
+              fixed {
+                ...GatsbyImageSharpFixed
               }
             }
           }

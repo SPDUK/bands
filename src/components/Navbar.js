@@ -8,13 +8,16 @@ const createSocialLink = ({ url, icon }) => (
   <a href={url}>
     <Img
       style={{ width: 13, height: 13 }}
-      fluid={icon.childImageSharp.fluid}
+      fixed={icon.childImageSharp && icon.childImageSharp.fixed}
       alt={url}
     />
   </a>
 );
-const Navbar = ({ socialLinks }) => (
-  <div>{socialLinks.map(createSocialLink)}</div>
+const Navbar = ({ socialLinks, brand }) => (
+  <div>
+    <h1>{brand}</h1>
+    {socialLinks.map(createSocialLink)}
+  </div>
 );
 
 // class Navbar extends Component {
