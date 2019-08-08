@@ -1,7 +1,9 @@
 ---
 templateKey: index-page
 brand: Polyphia
-socialLinks: []
+socialLinks:
+  - icon: /img/twitter.png
+    url: 'https://www.twitter.com'
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
