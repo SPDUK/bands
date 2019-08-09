@@ -2,20 +2,23 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Drawer, Button } from 'antd';
 
-import { StyledNavbar, StyledBrand } from './navbar-styles';
+import {
+  StyledNavbar,
+  StyledBrand,
+  StyledMenu,
+  StyledPageLinks,
+  StyledSocialLinks,
+  StyledFooter,
+} from './navbar-styles';
 
 const createSocialLink = ({ url, icon }) => (
   <a key={url} href={url}>
     <img
-      style={{ width: 13, height: 13, filter: 'brightness(0) invert(1)' }}
       src={icon && icon.childImageSharp ? icon.childImageSharp.fluid.src : icon}
       alt={url}
     />
   </a>
 );
-
-// {/* <h1>{brand}</h1> */}
-// {/* {socialLinks.map(createSocialLink)} */}
 
 const Navbar = ({ socialLinks, brand }) => {
   const [visible, setVisible] = useState(false);
@@ -27,10 +30,38 @@ const Navbar = ({ socialLinks, brand }) => {
     setVisible(false);
   };
 
+  const createPageLinks = () => {
+    const links = ['Home', 'Tour', 'News', 'Videos'];
+    return links.map(link => (
+      <a onClick={onClose} href="/">
+        <Button type="link">{link}</Button>
+      </a>
+    ));
+  };
+
   return (
     <StyledNavbar>
       <StyledBrand href="/">{brand}</StyledBrand>
-      <Button shape="circle" icon="menu" />
+      <StyledMenu onClick={showDrawer} shape="circle" icon="menu" />
+      <Drawer
+        title="Navigation"
+        placement="right"
+        closable
+        onClose={onClose}
+        visible={visible}
+      >
+        <StyledPageLinks>{createPageLinks()}</StyledPageLinks>
+        <StyledSocialLinks>
+          {socialLinks.map(createSocialLink)}
+        </StyledSocialLinks>
+        <StyledFooter>
+          <a href="/">
+            <Button block type="primary">
+              VISIT STORE
+            </Button>
+          </a>
+        </StyledFooter>
+      </Drawer>
     </StyledNavbar>
   );
 };
