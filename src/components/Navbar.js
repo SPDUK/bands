@@ -1,38 +1,49 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
-import github from '../img/github-icon.svg';
-import logo from '../img/logo.svg';
+import PropTypes from 'prop-types';
+import { create } from 'domain';
+import { Button } from 'antd';
 
 const createSocialLink = ({ url, icon }) => (
   <a key={url} href={url}>
     <img
-      style={{ width: 13, height: 13 }}
+      style={{ width: 13, height: 13, filter: 'brightness(0) invert(1)' }}
       src={icon && icon.childImageSharp ? icon.childImageSharp.fluid.src : icon}
       alt={url}
     />
   </a>
 );
 
-class Navbar extends Component {
-  render() {
-    const { socialLinks, brand } = this.props;
+const Navbar = ({ socialLinks, brand }) => (
+  <div
+    style={{
+      backgroundColor: 'black',
+      color: '#fff',
+      display: 'flex',
+      justifyContent: 'space-around',
+    }}
+  >
+    <Button type="primary">hi.</Button>
 
-    return (
-      <div
-        style={{
-          backgroundColor: 'black',
-          color: '#fff',
-          display: 'flex',
-          justifyContent: 'space-around',
-        }}
-      >
-        <h1>{brand}</h1>
-        {socialLinks.map(createSocialLink)}
-      </div>
-    );
-  }
-}
+    <h1>{brand}</h1>
+    {socialLinks.map(createSocialLink)}
+  </div>
+);
+
+Navbar.propTypes = {
+  socialLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string,
+      icon: PropTypes.object,
+    })
+  ),
+  brand: PropTypes.string,
+};
+
+createSocialLink.propTypes = {
+  url: PropTypes.string,
+  icon: PropTypes.object,
+};
 
 // class Navbar extends Component {
 //   state = {

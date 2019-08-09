@@ -1,4 +1,4 @@
-var proxy = require('http-proxy-middleware')
+const proxy = require('http-proxy-middleware');
 
 module.exports = {
   siteMetadata: {
@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-antd',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -87,6 +88,6 @@ module.exports = {
           '/.netlify/functions/': '',
         },
       })
-    )
+    );
   },
-}
+};
