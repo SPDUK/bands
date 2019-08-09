@@ -6,6 +6,8 @@ socialLinks:
     url: 'https://www.facebook.com'
   - icon: /img/twitter.png
     url: 'https://www.twitter.com'
+  - icon: /img/instagram.png
+    url: 'https://www.instagram.com'
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
