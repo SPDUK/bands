@@ -33,7 +33,7 @@ const Navbar = ({ socialLinks, brand }) => {
   const createPageLinks = () => {
     const links = ['Home', 'Tour', 'News', 'Videos'];
     return links.map(link => (
-      <a onClick={onClose} href="/">
+      <a key={link} onClick={onClose} href="/">
         <Button type="link">{link}</Button>
       </a>
     ));
