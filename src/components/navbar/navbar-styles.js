@@ -14,12 +14,25 @@ export const StyledNavbar = styled.nav`
   a {
     color: #f8f9fa;
   }
+  @media (min-width: 768px) {
+    height: 100px;
+    background: none;
+    margin: 0px 20px;
+    line-height: 100px;
+  }
 `;
 
 export const StyledBrand = styled.a`
   color: #f8f9fa;
   font-size: 26px;
   font-family: 'New Rocker', cursive;
+  &:hover {
+    opacity: 0.8;
+    color: #f8f9fa;
+  }
+  @media (min-width: 768px) {
+    font-size: 60px;
+  }
 `;
 
 export const StyledMenu = styled(Button)`
@@ -39,7 +52,25 @@ export const StyledPageLinks = styled.div`
     font-size: 1.1em;
   }
   @media (min-width: 768px) {
-    display: none;
+    flex-direction: row;
+    margin: 0 20px;
+    font-size: 14px;
+    a {
+      margin: 0 20px;
+    }
+    button,
+    a {
+      color: #fff;
+      font-weight: 800;
+    }
+    button {
+      box-sizing: border-box;
+      padding: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      &:hover {
+        border-bottom: 1px solid #1890ff;
+      }
+    }
   }
 `;
 
@@ -51,6 +82,24 @@ export const StyledSocialLinks = styled.div`
     height: 24px;
     width: 24px;
     filter: brightness(0);
+  }
+  @media (min-width: 768px) {
+    filter: brightness(0) invert(1);
+    justify-content: flex-start;
+    padding: 0px;
+    margin-right: 22px;
+    img {
+      margin: 0 10px;
+      height: 16px;
+      width: 16px;
+    }
+  }
+`;
+
+export const StyledDesktopLinks = styled.div`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
   }
 `;
 

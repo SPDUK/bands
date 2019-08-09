@@ -9,6 +9,7 @@ import {
   StyledPageLinks,
   StyledSocialLinks,
   StyledFooter,
+  StyledDesktopLinks,
 } from './navbar-styles';
 
 const createSocialLink = ({ url, icon }) => (
@@ -31,7 +32,7 @@ const Navbar = ({ socialLinks, brand }) => {
   };
 
   const createPageLinks = () => {
-    const links = ['Home', 'Tour', 'News', 'Videos'];
+    const links = ['HOME', 'TOUR', 'NEWS', 'VIDEOS'];
     return links.map(link => (
       <a key={link} onClick={onClose} href="/">
         <Button type="link">{link}</Button>
@@ -42,6 +43,17 @@ const Navbar = ({ socialLinks, brand }) => {
   return (
     <StyledNavbar>
       <StyledBrand href="/">{brand}</StyledBrand>
+      <StyledDesktopLinks>
+        <StyledPageLinks>{createPageLinks()}</StyledPageLinks>
+        <StyledSocialLinks>
+          {socialLinks.map(createSocialLink)}
+        </StyledSocialLinks>
+        <a href="/">
+          <Button block type="primary">
+            VISIT STORE
+          </Button>
+        </a>
+      </StyledDesktopLinks>
       <StyledMenu onClick={showDrawer} shape="circle" icon="menu" />
       <Drawer
         title="Navigation"
