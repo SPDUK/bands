@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar/navbar';
 import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
@@ -128,6 +128,8 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  brand: PropTypes.string,
+  socialLinks: PropTypes.array,
 };
 
 const IndexPage = ({ data }) => {
