@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Drawer, Button } from 'antd';
+import CTAButton from '../ctabutton/ctabutton';
 
 import {
   StyledNavbar,
@@ -49,9 +50,9 @@ const Navbar = ({ socialLinks, brand }) => {
           {socialLinks.map(createSocialLink)}
         </StyledSocialLinks>
         <a href="/">
-          <Button block type="primary">
+          <CTAButton block type="primary">
             VISIT STORE
-          </Button>
+          </CTAButton>
         </a>
       </StyledDesktopLinks>
       <StyledMenu onClick={showDrawer} shape="circle" icon="menu" />
@@ -68,9 +69,9 @@ const Navbar = ({ socialLinks, brand }) => {
         </StyledSocialLinks>
         <StyledFooter>
           <a href="/">
-            <Button block type="primary">
+            <CTAButton block type="primary">
               VISIT STORE
-            </Button>
+            </CTAButton>
           </a>
         </StyledFooter>
       </Drawer>

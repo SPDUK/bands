@@ -17,8 +17,8 @@ export const StyledNavbar = styled.nav`
   @media (min-width: 768px) {
     height: 100px;
     background: none;
-    margin: 0px 20px;
     line-height: 100px;
+    padding: 10px 40px;
   }
 `;
 
