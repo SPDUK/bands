@@ -5,13 +5,13 @@ socialLinks:
   - icon: /img/facebook.png
     url: 'https://www.facebook.com'
   - icon: /img/twitter.png
-    url: 'https://www.twitter.com'
+    url: 'https://www.twitter.com/1'
   - icon: /img/instagram.png
     url: 'https://www.instagram.com'
   - icon: /img/twitter.png
-    url: 'https://www.twitter.com'
+    url: 'https://www.twitter.com/2'
   - icon: /img/twitter.png
-    url: 'https://www.twitter.com'
+    url: 'https://www.twitter.com/3'
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
