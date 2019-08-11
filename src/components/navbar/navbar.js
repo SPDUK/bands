@@ -1,83 +1,111 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Drawer, Button } from 'antd';
-import CTAButton from '../ctabutton/ctabutton';
 
-import {
-  StyledNavbar,
-  StyledBrand,
-  StyledMenu,
-  StyledPageLinks,
-  StyledSocialLinks,
-  StyledFooter,
-  StyledDesktopLinks,
-} from './navbar-styles';
-
-const createSocialLink = ({ url, icon }) => (
-  <a key={url} href={url}>
-    <img
-      src={icon && icon.childImageSharp ? icon.childImageSharp.fluid.src : icon}
-      alt={url}
-    />
-  </a>
-);
+import './navbar.scss';
 
 const Navbar = ({ socialLinks, brand }) => {
-  const [visible, setVisible] = useState(false);
-
-  const showDrawer = () => {
-    setVisible(true);
-  };
-  const onClose = () => {
-    setVisible(false);
-  };
+  const [active, setActive] = useState(false);
 
   const createPageLinks = () => {
     const links = ['HOME', 'TOUR', 'NEWS', 'VIDEOS'];
     return links.map(link => (
-      <a key={link} onClick={onClose} href="/">
-        <Button type="link">{link}</Button>
+      <a className="navbar-item" key={link} onClick={toggleHamburger} href="/">
+        {link}
       </a>
     ));
   };
 
+  const createSocialLink = ({ url, icon }) => (
+    <a className="navbar-item" key={url} href={url}>
+      <img
+        src={
+          icon && icon.childImageSharp ? icon.childImageSharp.fluid.src : icon
+        }
+        alt={url}
+      />
+    </a>
+  );
+
+  const toggleHamburger = () => {
+    setActive(!active);
+  };
+
   return (
-    <StyledNavbar>
-      <StyledBrand href="/">{brand}</StyledBrand>
-      <StyledDesktopLinks>
-        <StyledPageLinks>{createPageLinks()}</StyledPageLinks>
-        <StyledSocialLinks>
-          {socialLinks.map(createSocialLink)}
-        </StyledSocialLinks>
-        <a href="/">
-          <CTAButton block type="primary">
-            VISIT STORE
-          </CTAButton>
+    <nav
+      className="navbar is-transparent"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div className="navbar-brand">
+        <a className="navbar-item" href="https://bulma.io">
+          {brand}
         </a>
-      </StyledDesktopLinks>
-      <StyledMenu onClick={showDrawer} shape="circle" icon="menu" />
-      <Drawer
-        title="Navigation"
-        placement="right"
-        closable
-        onClose={onClose}
-        visible={visible}
+
+        <a
+          role="button"
+          tabIndex="0"
+          aria-pressed="false"
+          className={`navbar-burger burger ${active && 'is-active'}`}
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+          onClick={toggleHamburger}
+          onKeyPress={toggleHamburger}
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div
+        id="navbarBasicExample"
+        className={`navbar-menu ${active && 'is-active'}`}
       >
-        <StyledPageLinks>{createPageLinks()}</StyledPageLinks>
-        <StyledSocialLinks>
-          {socialLinks.map(createSocialLink)}
-        </StyledSocialLinks>
-        <StyledFooter>
-          <a href="/">
-            <CTAButton block type="primary">
-              VISIT STORE
-            </CTAButton>
+        <div className="navbar-start"></div>
+
+        <div className="navbar-end">
+          <div className="page-links">{createPageLinks()}</div>
+          <div className="social-links">
+            {socialLinks.map(createSocialLink)}
+          </div>
+          <a className="is-cta navbar-item" href="/">
+            VISIT STORE
           </a>
-        </StyledFooter>
-      </Drawer>
-    </StyledNavbar>
+        </div>
+      </div>
+    </nav>
   );
 };
+
+//   return (
+// {
+/* <StyledNavbar>
+  <StyledDesktopLinks>
+
+  </StyledDesktopLinks>
+  <StyledMenu onClick={showDrawer} shape="circle" icon="menu" />
+  <Drawer
+    title="Navigation"
+    placement="right"
+    closable
+    onClose={onClose}
+    visible={visible}
+  >
+    <StyledPageLinks>{createPageLinks()}</StyledPageLinks>
+    <StyledSocialLinks>{socialLinks.map(createSocialLink)}</StyledSocialLinks>
+    <StyledFooter>
+      <a href="/">
+        <CTAButton block type="primary">
+          VISIT STORE
+        </CTAButton>
+      </a>
+    </StyledFooter>
+  </Drawer>
+</StyledNavbar>; */
+// }
+//   );
+// };
 
 Navbar.propTypes = {
   socialLinks: PropTypes.arrayOf(
@@ -89,9 +117,9 @@ Navbar.propTypes = {
   brand: PropTypes.string,
 };
 
-createSocialLink.propTypes = {
-  url: PropTypes.string,
-  icon: PropTypes.object,
-};
+// createSocialLink.propTypes = {
+//   url: PropTypes.string,
+//   icon: PropTypes.object,
+// };
 
 export default Navbar;
