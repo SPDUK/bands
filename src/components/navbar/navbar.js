@@ -78,35 +78,6 @@ const Navbar = ({ socialLinks, brand }) => {
   );
 };
 
-//   return (
-// {
-/* <StyledNavbar>
-  <StyledDesktopLinks>
-
-  </StyledDesktopLinks>
-  <StyledMenu onClick={showDrawer} shape="circle" icon="menu" />
-  <Drawer
-    title="Navigation"
-    placement="right"
-    closable
-    onClose={onClose}
-    visible={visible}
-  >
-    <StyledPageLinks>{createPageLinks()}</StyledPageLinks>
-    <StyledSocialLinks>{socialLinks.map(createSocialLink)}</StyledSocialLinks>
-    <StyledFooter>
-      <a href="/">
-        <CTAButton block type="primary">
-          VISIT STORE
-        </CTAButton>
-      </a>
-    </StyledFooter>
-  </Drawer>
-</StyledNavbar>; */
-// }
-//   );
-// };
-
 Navbar.propTypes = {
   socialLinks: PropTypes.arrayOf(
     PropTypes.shape({
@@ -116,10 +87,5 @@ Navbar.propTypes = {
   ),
   brand: PropTypes.string,
 };
-
-// createSocialLink.propTypes = {
-//   url: PropTypes.string,
-//   icon: PropTypes.object,
-// };
 
 export default Navbar;
