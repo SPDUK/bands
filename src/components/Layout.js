@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { withPrefix } from 'gatsby';
+import PropTypes from 'prop-types';
 import Footer from './Footer';
 import './all.sass';
 import useSiteMetadata from './SiteMetadata';
-import { withPrefix } from 'gatsby';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -50,6 +51,10 @@ const TemplateWrapper = ({ children }) => {
       <Footer />
     </div>
   );
+};
+
+TemplateWrapper.propTypes = {
+  children: PropTypes.node,
 };
 
 export default TemplateWrapper;
