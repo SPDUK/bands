@@ -13,7 +13,8 @@ socialLinks:
   - icon: /img/twitter.png
     url: 'https://www.twitter.com/3'
 title: Great coffee with a conscience
-image: /img/home-jumbotron.jpg
+background: >-
+  https://res.cloudinary.com/dmjolhdaq/video/upload/v1565623579/bands/polyphia.webm
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
