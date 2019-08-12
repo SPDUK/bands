@@ -17,8 +17,6 @@ const Hero = ({ background }) => {
       >
         <source src={background} type="video/mp4" />
       </video>
-
-      <img src="" alt="" />
       <div className="hero-body">
         <div className="container">
           <h1 className="title">Fullheight title</h1>
