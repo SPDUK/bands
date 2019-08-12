@@ -5,12 +5,18 @@
   a {
     @media (min-width: 1024px) {
       color: #f8f9fa;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
   @media (min-width: 1024px) {
     height: 100px;
-    padding: 10px 40px;
+    padding: 10px;
     color: unset;
+  }
+  @media (min-width: 1400px) {
+    padding: 10px 40px;
   }
 
   &.is-transparent {
@@ -21,73 +27,69 @@
       top: 0;
     }
   }
-}
 
-.navbar-brand a {
-  font-size: 26px;
-  font-family: 'New Rocker', cursive;
-  &:hover {
-    opacity: 0.8;
-    color: #f8f9fa;
-  }
-  @media (min-width: 1024px) {
-    font-size: 60px;
-  }
-}
-
-.page-links {
-  display: flex;
-  flex-direction: column;
-  a {
-    margin: 5px 0;
-  }
-  button {
-    width: 100%;
-    font-size: 1.1em;
-  }
-  @media (min-width: 1024px) {
-    flex-direction: row;
-    margin: 0 20px;
-    font-size: 14px;
-    a {
-      margin: 0 20px;
+  .navbar-brand a {
+    font-size: 26px;
+    font-family: 'New Rocker', cursive;
+    @media (min-width: 1024px) {
+      font-size: 60px;
     }
-    button,
+  }
+
+  .page-links {
+    display: flex;
+    flex-direction: column;
     a {
-      @media (min-width: 1024px) {
-        color: #fff;
-      }
-      font-weight: 800;
+      margin: 5px 0;
     }
     button {
-      box-sizing: border-box;
-      padding: 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      &:hover {
-        border-bottom: 1px solid #1890ff;
+      width: 100%;
+      font-size: 1.1em;
+    }
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      margin: 0 10px;
+      font-size: 14px;
+      a {
+        margin: 0 10px;
+      }
+      button,
+      a {
+        @media (min-width: 1024px) {
+          color: #fff;
+        }
+        font-weight: 800;
+      }
+      button {
+        box-sizing: border-box;
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        &:hover {
+          border-bottom: 1px solid #1890ff;
+        }
       }
     }
   }
-}
 
-.social-links {
-  padding: 30px 0;
-  display: flex;
-  justify-content: space-between;
-  img {
-    height: 24px;
-    width: 24px;
-    filter: brightness(0);
-  }
-  @media (min-width: 1024px) {
-    filter: brightness(0) invert(1);
-    justify-content: flex-start;
-    padding: 0px;
-    margin-right: 22px;
+  .social-links {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
     img {
-      margin: 0 10px;
-      height: 16px;
-      width: 16px;
+      height: 24px;
+      width: 24px;
+      filter: brightness(0);
+    }
+    @media (min-width: 1024px) {
+      filter: brightness(0) invert(1);
+      justify-content: flex-start;
+      padding: 0px;
+      margin-right: 22px;
+      img {
+        margin: 0 0px;
+        height: 16px;
+        width: 16px;
+      }
     }
   }
 }
