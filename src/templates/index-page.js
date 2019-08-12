@@ -5,9 +5,10 @@ import Navbar from '../components/navbar/navbar';
 import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
+import Hero from '../components/hero/hero';
 
 export const IndexPageTemplate = ({
-  image,
+  background,
   title,
   heading,
   subheading,
@@ -19,17 +20,8 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <Navbar brand={brand} socialLinks={socialLinks} />
-
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
+    <Hero background={background} />
+    <div className="full-width-image margin-top-0">
       <div
         style={{
           display: 'flex',
@@ -119,7 +111,7 @@ export const IndexPageTemplate = ({
 );
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  background: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
@@ -135,7 +127,7 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const {
     frontmatter: {
-      image,
+      background,
       title,
       heading,
       subheading,
@@ -150,7 +142,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={image}
+        background={background}
         title={title}
         heading={heading}
         subheading={subheading}
@@ -190,15 +182,9 @@ export const pageQuery = graphql`
             }
           }
         }
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         heading
         subheading
+        background
         mainpitch {
           title
           description

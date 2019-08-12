@@ -41,7 +41,12 @@ collections:
                 ],
             }
           - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
+          - {
+              label: Background Image / Video,
+              name: background,
+              widget: string,
+              hint: 'Upload a video to cloudinary.com',
+            }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
           - {
