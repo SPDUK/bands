@@ -14,7 +14,7 @@ socialLinks:
     url: 'https://www.twitter.com/3'
 title: Great coffee with a conscience
 background: >-
-  https://res.cloudinary.com/dmjolhdaq/video/upload/v1565623579/bands/polyphia.webm
+  https://res.cloudinary.com/dmjolhdaq/video/upload/v1565632295/bands/polyphia2.webm
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
