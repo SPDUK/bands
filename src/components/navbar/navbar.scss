@@ -30,7 +30,6 @@
 
   .navbar-brand a {
     font-size: 26px;
-    font-family: 'New Rocker', cursive;
     @media (min-width: 1024px) {
       font-size: 60px;
     }
@@ -91,21 +90,5 @@
         width: 16px;
       }
     }
-  }
-}
-
-.is-cta {
-  border-radius: 60px;
-  box-sizing: border-box;
-  background: rgba(24, 144, 255, 0.3);
-  border: 1px solid rgba(24, 144, 255, 0.8);
-  color: #f8f9fa;
-  padding: 10px 18px;
-  height: 55px;
-  font-weight: bold;
-  margin: auto;
-  text-align: center;
-  &:hover {
-    background: rgba(255, 255, 255, 0.8);
   }
 }

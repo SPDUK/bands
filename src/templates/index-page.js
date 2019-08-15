@@ -9,9 +9,9 @@ import Hero from '../components/hero/hero';
 
 export const IndexPageTemplate = ({
   background,
-  title,
+  heroTitle,
   heading,
-  subheading,
+  heroLink,
   mainpitch,
   description,
   intro,
@@ -20,46 +20,8 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <Navbar brand={brand} socialLinks={socialLinks} />
-    <Hero background={background} />
-    <div className="full-width-image margin-top-0">
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
-    </div>
+    <Hero background={background} heroLink={heroLink} heroTitle={heroTitle} />
+    <div className="full-width-image margin-top-0"></div>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -112,9 +74,9 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   background: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
+  heroTitle: PropTypes.string,
   heading: PropTypes.string,
-  subheading: PropTypes.string,
+  heroLink: PropTypes.object,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -128,9 +90,9 @@ const IndexPage = ({ data }) => {
   const {
     frontmatter: {
       background,
-      title,
+      heroTitle,
       heading,
-      subheading,
+      heroLink,
       mainpitch,
       description,
       intro,
@@ -143,9 +105,9 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         background={background}
-        title={title}
+        heroTitle={heroTitle}
         heading={heading}
-        subheading={subheading}
+        heroLink={heroLink}
         mainpitch={mainpitch}
         description={description}
         intro={intro}
@@ -170,7 +132,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
         brand
         socialLinks {
           url
@@ -183,11 +144,15 @@ export const pageQuery = graphql`
           }
         }
         heading
-        subheading
         background
         mainpitch {
           title
           description
+        }
+        heroTitle
+        heroLink {
+          url
+          text
         }
         description
         intro {

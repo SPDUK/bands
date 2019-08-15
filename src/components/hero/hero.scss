@@ -15,4 +15,16 @@
     background-position: center top;
     background-attachment: fixed;
   }
+  &-body {
+    text-align: center;
+
+    .container {
+      .title {
+        font-size: 3em;
+        @media (min-width: 1024px) {
+          font-size: 96px;
+        }
+      }
+    }
+  }
 }

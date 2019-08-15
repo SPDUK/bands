@@ -37,7 +37,7 @@ const Navbar = ({ socialLinks, brand }) => {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
+        <a className="navbar-item alt-font" href="/">
           {brand}
         </a>
 
@@ -58,10 +58,7 @@ const Navbar = ({ socialLinks, brand }) => {
         </a>
       </div>
 
-      <div
-        id="navbarBasicExample"
-        className={`navbar-menu ${active && 'is-active'}`}
-      >
+      <div className={`navbar-menu ${active && 'is-active'}`}>
         <div className="navbar-start"></div>
 
         <div className="navbar-end">

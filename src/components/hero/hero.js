@@ -5,7 +5,8 @@ import './hero.scss';
 
 const imageRegex = /\.(gif|jpg|jpeg|tiff|png)$/i;
 
-const Hero = ({ background }) => {
+const Hero = ({ background, heroTitle, heroLink }) => {
+  console.log(heroLink);
   const [videoLoaded, setVideoloaded] = useState(false);
   return (
     <section className="hero is-dark is-fullheight">
@@ -18,15 +19,16 @@ const Hero = ({ background }) => {
           autoPlay
           muted
           loop
-          id={background}
         >
           <source src={background} type="video/mp4" />
         </video>
       )}
       <div className="hero-body">
         <div className="container">
-          {/* <h1 className="title">Fullheight title</h1> */}
-          {/* <h2 className="subtitle">Fullheight subtitle</h2> */}
+          <h1 className="title alt-font">{heroTitle}</h1>
+          <a href={heroLink.url} className="is-cta navbar-item">
+            {heroLink.text}
+          </a>
         </div>
       </div>
     </section>
@@ -34,6 +36,8 @@ const Hero = ({ background }) => {
 };
 Hero.propTypes = {
   background: PropTypes.string,
+  heroTitle: PropTypes.string,
+  heroLink: PropTypes.object,
 };
 
 export default Hero;

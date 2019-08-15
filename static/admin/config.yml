@@ -40,7 +40,17 @@ collections:
                   { label: Icon, name: icon, widget: image },
                 ],
             }
-          - { label: Title, name: title, widget: string }
+          - { label: Hero Title, name: heroTitle, widget: string }
+          - {
+              label: Hero Link,
+              name: heroLink,
+              widget: object,
+              fields:
+                [
+                  { label: Text, name: text, widget: string },
+                  { label: Link URL, name: url, widget: string },
+                ],
+            }
           - {
               label: Background Image / Video,
               name: background,
@@ -48,7 +58,6 @@ collections:
               hint: 'Upload a video to cloudinary.com or link an image to be used',
             }
           - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
           - {
               label: Mainpitch,
               name: mainpitch,
