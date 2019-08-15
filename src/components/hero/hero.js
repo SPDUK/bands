@@ -26,7 +26,7 @@ const Hero = ({ background, heroTitle, heroLink }) => {
       <div className="hero-body">
         <div className="container">
           <h1 className="title alt-font">{heroTitle}</h1>
-          <a href={heroLink.url} className="is-cta navbar-item">
+          <a href={heroLink.url} className="is-cta">
             {heroLink.text}
           </a>
         </div>
