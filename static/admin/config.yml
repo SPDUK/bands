@@ -45,7 +45,7 @@ collections:
               label: Background Image / Video,
               name: background,
               widget: string,
-              hint: 'Upload a video to cloudinary.com',
+              hint: 'Upload a video to cloudinary.com or link an image to be used',
             }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
