@@ -8,7 +8,7 @@ public_folder: /img
 collections:
   - name: 'news'
     label: 'News'
-    folder: 'src/pages/News'
+    folder: 'src/pages/news'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
