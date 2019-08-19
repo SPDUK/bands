@@ -1,25 +1,21 @@
-@import "~bulma/sass/utilities/initial-variables"
+// Set your brand colors
+//$primary: #8A4D76
+//$info: #FA7C91
+//$success: #757763
+//$warning: yellow
+//$danger: red
+//$light: #ccc
+//$dark: #444
 
-// Config vars
-// Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
+
+
+            .columns 
+  margin-left: 0 !important
+  margin-right: 0 !important
+
 
 .alt-font 
   font-family: 'New Rocker', cursive;
-
-.is-cta 
-  border-radius: 60px;
-  box-sizing: border-box;
-  background: rgba(24, 144, 255, 0.3);
-  border: 1px solid rgba(24, 144, 255, 0.8);
-  color: #f8f9fa;
-  padding: 10px 18px;
-  height: 55px;
-  font-weight: bold;
-  margin: auto;
-  text-align: center;
-  
 
 
 
@@ -61,22 +57,6 @@ $kaldi-red-invert: #fff
     justify-content: center
     align-items: center
 
-.btn
-    display: inline-block
-    padding: 12px 16px 10px
-    font-size: 18px
-    font-size: 1rem
-    line-height: 1.25
-    background-color: #fff
-    border-radius: .25rem
-    text-decoration: none
-    font-weight: 700
-    color: #CC3700
-    text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #CC3700
-    box-shadow: inset 0 0 0 2px #f40
-    -webkit-transition: all .15s ease
-    transition: all .15s ease
 
 .margin-top-0
   margin-top: 0 !important
@@ -85,15 +65,6 @@ $kaldi-red-invert: #fff
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
-
-//Menu overrides
-$menu-item-color: $white-ter
-$menu-item-hover-color: $black !important
-$menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
-$menu-label-color: $white-ter
 
 
 .menu-label
@@ -107,7 +78,7 @@ $menu-label-color: $white-ter
 .social a
     padding: .5em .5em .3em .5em
     border-radius: 1em
-    background-color: $white-ter
+    background-color: #fafafa
     margin: .5em
     width: 1em
     height: 1em
@@ -116,27 +87,26 @@ $menu-label-color: $white-ter
 
 // news roll
 .news-list-item.is-featured
-  background-color: #d6400033;
+  background-color: #d6400033
 .news-list-item header
-  display: flex;
-  margin-bottom: 1em;
+  display: flex
+  margin-bottom: 1em
 .news-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
+  flex-basis: 35%
+  margin: 0 1.5em 0 0
 
 
-@import "~bulma"
 
 
 // responsiveness
-+tablet-only
-  .news-list-item .featured-thumbnail
-    flex-basis: 50%;
+//+tablet-only
+ // .news-list-item .featured-thumbnail
+ //   flex-basis: 50%
 
-+mobile
-  .news-list-item header
-    display: block
-  .news-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+//+mobile
+  //.news-list-item header
+  //  display: block
+  //.news-list-item .featured-thumbnail
+   // text-align: center
+   // max-width: 70%
+   // margin: 0 0 1em

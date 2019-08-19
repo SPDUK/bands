@@ -66,7 +66,7 @@ const Navbar = ({ socialLinks, brand }) => {
           <div className="social-links">
             {socialLinks.map(createSocialLink)}
           </div>
-          <a className="is-cta navbar-item" href="/">
+          <a className="button is-primary" href="/">
             VISIT STORE
           </a>
         </div>

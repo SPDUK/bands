@@ -2,7 +2,7 @@
   height: 50px;
   width: 100%;
   line-height: 30px;
-  a {
+  &-item {
     @media (min-width: 1024px) {
       color: #f8f9fa;
       &:hover {
@@ -28,10 +28,21 @@
     }
   }
 
+  .button {
+    width: 60%;
+    margin: 20px auto;
+    display: block;
+    @media (min-width: 1024px) {
+      width: 150px;
+      margin: auto 20px auto auto;
+    }
+  }
+
   .navbar-brand a {
     font-size: 26px;
     @media (min-width: 1024px) {
       font-size: 60px;
+      color: #f8f9fa;
     }
   }
 
@@ -71,7 +82,7 @@
   }
 
   .social-links {
-    padding: 30px 0;
+    padding: 20px 0 0 0;
     display: flex;
     justify-content: space-between;
     img {
