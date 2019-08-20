@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Navbar from '../components/navbar/navbar';
 import Layout from '../components/Layout';
 import Features from '../components/Features';
-import NewsRoll from '../components/NewsRoll';
+import NewsRoll from '../components/newsroll/newsroll';
 import Hero from '../components/hero/hero';
 
 export const IndexPageTemplate = ({

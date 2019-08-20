@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from '../../components/Layout';
-import NewsRoll from '../../components/NewsRoll';
+import NewsRoll from '../../components/newsroll/newsroll';
 
 export default class NewsIndexPage extends React.Component {
   render() {

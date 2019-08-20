@@ -1,0 +1,21 @@
+.newsroll {
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
+  &-item {
+    flex-basis: 100%;
+    padding-top: 25px;
+    @media (min-width: 768px) {
+      flex-basis: 45%;
+      max-width: 300px;
+    }
+    @media (min-width: 1024px) {
+      flex-basis: 30%;
+    }
+    .is-featured {
+      background-color: #d6400033;
+    }
+  }
+}

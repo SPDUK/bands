@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
-import PreviewCompatibleImage from './PreviewCompatibleImage';
+import PreviewCompatibleImage from '../PreviewCompatibleImage';
+import './newsroll.scss';
 
 class NewsRoll extends React.Component {
   render() {
@@ -10,12 +11,12 @@ class NewsRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <div className="columns is-multiline">
+      <div className="newsroll">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
+            <div className="newsroll-item is-parent" key={post.id}>
               <article
-                className={`blog-list-item tile is-child card ${
+                className={`tile is-child card ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
               >
@@ -38,7 +39,7 @@ class NewsRoll extends React.Component {
                       {post.frontmatter.title}
                     </Link>
                     <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
+                    <span className="subtitle is-size-6 is-block">
                       {post.frontmatter.date}
                     </span>
                   </p>
