@@ -12,12 +12,13 @@ socialLinks:
     url: 'https://www.twitter.com/2'
   - icon: /img/twitter.png
     url: 'https://www.twitter.com/3'
-heroTitle: 'New Levels New Devils'
+heroTitle: New Levels New Devils
 heroLink:
-  text: 'Watch More'
+  text: Watch More
   url: 'https://wwww.youtube.com'
 background: 'https://res.cloudinary.com/dmjolhdaq/image/upload/v1565871521/bands/bg.png'
 heading: Great coffee with a conscience
+blogLimit: 3
 mainpitch:
   description: >
     Kaldi is the coffee store for everyone who believes that great coffee
@@ -82,3 +83,4 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
+
