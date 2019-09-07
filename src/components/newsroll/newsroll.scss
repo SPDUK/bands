@@ -5,9 +5,10 @@
     justify-content: space-between;
   }
   &-item {
+    background-color: none !important;
     cursor: pointer;
     flex-basis: 100%;
-    padding-top: 25px;
+    margin-top: 25px;
     @media (min-width: 768px) {
       flex-basis: 45%;
       max-width: 300px;
@@ -31,7 +32,7 @@
       padding: 0.6rem;
     }
     .is-featured {
-      background-color: #d6400033;
+      border: 1px solid #fff;
     }
   }
 }

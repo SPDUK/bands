@@ -22,7 +22,7 @@ class NewsRoll extends React.Component {
               key={post.id}
             >
               <article
-                className={`tile is-child card ${
+                className={`tile is-child has-text-light ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
               >
@@ -41,14 +41,12 @@ class NewsRoll extends React.Component {
                 <footer className="newsroll-item-footer">
                   <div className="newsroll-item-meta">
                     <Link
-                      className="has-text-dark is-size-6 has-text-weight-bold"
+                      className=" is-size-6 has-text-light has-text-weight-bold"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.title}
                     </Link>
-                    <i className="has-text-dark is-size-7">
-                      {post.frontmatter.date}
-                    </i>
+                    <i className="is-size-7">{post.frontmatter.date}</i>
                   </div>
                   <p>{post.excerpt}</p>
                   <Link

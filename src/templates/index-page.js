@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({
   <div>
     <Navbar brand={brand} socialLinks={socialLinks} />
     <Hero background={background} heroLink={heroLink} heroTitle={heroTitle} />
-    <section className="section section--gradient">
+    <section className="has-background-dark section section--gradient has-text-light">
       <div className="container">
         <div className="section">
           <div className="columns">
@@ -30,7 +30,7 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="content">
                   <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
+                    <h3 className="has-text-weight-semibold is-size-2 has-text-light">
                       Latest News
                     </h3>
                     {/* specify limit of how many items to display on the homepage */}
@@ -41,16 +41,18 @@ export const IndexPageTemplate = ({
                       </Link>
                     </div>
                   </div>
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                  <div className="tile has-text-light">
+                    <h1 className="title has-text-light">{mainpitch.title}</h1>
                   </div>
                   <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+                    <h3 className="subtitle has-text-light">
+                      {mainpitch.description}
+                    </h3>
                   </div>
                 </div>
                 <div className="columns">
                   <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
+                    <h3 className="has-text-weight-semibold is-size-2 has-text-light">
                       {heading}
                     </h3>
                     <p>{description}</p>
