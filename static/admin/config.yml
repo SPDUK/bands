@@ -58,6 +58,7 @@ collections:
               hint: 'Upload a video to cloudinary.com or link an image to be used',
             }
           - { label: Heading, name: heading, widget: string }
+          - { label: Home Page Blog Post Limit, name: blogLimit, widget: number, default: 3 }
           - {
               label: Mainpitch,
               name: mainpitch,
