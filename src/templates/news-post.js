@@ -49,6 +49,7 @@ export const NewsPostTemplate = ({
 NewsPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
+  tags: PropTypes.array,
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,

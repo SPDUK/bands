@@ -6,7 +6,6 @@ import './hero.scss';
 const imageRegex = /\.(gif|jpg|jpeg|tiff|png)$/i;
 
 const Hero = ({ background, heroTitle, heroLink }) => {
-  console.log(heroLink);
   const [videoLoaded, setVideoloaded] = useState(false);
   return (
     <section className="hero is-dark is-fullheight">
