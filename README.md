@@ -1,6 +1,10 @@
 ### CMS preview only works correctly in production (`gatsby serve`)
 
-# Gatsby + Netlify CMS Starter
+### A website builder for bands, artists, musicians etc.
+
+Created using Netlify CMS & React / Gatsby
+
+# Bands
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
 
