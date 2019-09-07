@@ -6,14 +6,16 @@ import './newsroll.scss';
 
 class NewsRoll extends React.Component {
   render() {
-    const { data } = this.props;
-    console.log(data);
+    const { data, limit } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
+
+    // limit posts to N based on the CMS options
+    const limitedPosts = posts && limit ? posts.slice(0, limit) : posts;
 
     return (
       <div className="newsroll">
         {posts &&
-          posts.map(({ node: post }) => (
+          limitedPosts.map(({ node: post }) => (
             <div className="newsroll-item is-parent" key={post.id}>
               <article
                 className={`tile is-child card ${
@@ -66,9 +68,10 @@ NewsRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
+  limit: PropTypes.number,
 };
 
-export default () => (
+export default ({ limit }) => (
   <StaticQuery
     query={graphql`
       query NewsRollQuery {
@@ -101,6 +104,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <NewsRoll data={data} count={count} />}
+    render={data => <NewsRoll data={data} limit={limit} />}
   />
 );

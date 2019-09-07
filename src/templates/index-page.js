@@ -17,6 +17,7 @@ export const IndexPageTemplate = ({
   intro,
   socialLinks,
   brand,
+  blogLimit,
 }) => (
   <div>
     <Navbar brand={brand} socialLinks={socialLinks} />
@@ -32,7 +33,8 @@ export const IndexPageTemplate = ({
                     <h3 className="has-text-weight-semibold is-size-2">
                       Latest News
                     </h3>
-                    <NewsRoll />
+                    {/* specify limit of how many items to display on the homepage */}
+                    <NewsRoll limit={blogLimit} />
                     <div className="column is-12 has-text-centered">
                       <Link className="btn" to="/news">
                         Read more
@@ -83,6 +85,7 @@ IndexPageTemplate.propTypes = {
   }),
   brand: PropTypes.string,
   socialLinks: PropTypes.array,
+  blogLimit: PropTypes.number,
 };
 
 const IndexPage = ({ data }) => {
@@ -97,6 +100,7 @@ const IndexPage = ({ data }) => {
       intro,
       socialLinks,
       brand,
+      blogLimit,
     },
   } = data.markdownRemark;
 
@@ -112,6 +116,7 @@ const IndexPage = ({ data }) => {
         intro={intro}
         socialLinks={socialLinks}
         brand={brand}
+        blogLimit={blogLimit}
       />
     </Layout>
   );
@@ -144,6 +149,7 @@ export const pageQuery = graphql`
         }
         heading
         background
+        blogLimit
         mainpitch {
           title
           description
