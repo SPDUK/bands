@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { Link, graphql, StaticQuery, navigate } from 'gatsby';
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
 import './newsroll.scss';
 
@@ -16,7 +16,11 @@ class NewsRoll extends React.Component {
       <div className="newsroll">
         {posts &&
           limitedPosts.map(({ node: post }) => (
-            <div className="newsroll-item is-parent" key={post.id}>
+            <div
+              onClick={() => navigate(post.fields.slug)}
+              className="newsroll-item is-parent"
+              key={post.id}
+            >
               <article
                 className={`tile is-child card ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
@@ -33,27 +37,27 @@ class NewsRoll extends React.Component {
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta">
+                </header>
+                <footer className="newsroll-item-footer">
+                  <div className="newsroll-item-meta">
                     <Link
-                      className="title has-text-primary is-size-4"
+                      className="has-text-dark is-size-6 has-text-weight-bold"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.title}
                     </Link>
-                    <span> &bull; </span>
-                    <span className="subtitle is-size-6 is-block">
+                    <i className="has-text-dark is-size-7">
                       {post.frontmatter.date}
-                    </span>
-                  </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
+                    </i>
+                  </div>
+                  <p>{post.excerpt}</p>
+                  <Link
+                    className=" newsroll-item-link button has-text-primary is-text "
+                    to={post.fields.slug}
+                  >
                     Keep Reading →
                   </Link>
-                </p>
+                </footer>
               </article>
             </div>
           ))}
